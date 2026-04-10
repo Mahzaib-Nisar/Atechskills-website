@@ -1,0 +1,76 @@
+:root {
+  --sms-primary: #0a3d62;
+  --sms-accent: #3c6382;
+  --sms-bg: #f5f6fa;
+  --sms-text: #222f3e;
+  --sms-border-radius: 8px;
+  --sms-font: 'Segoe UI', Arial, sans-serif;
+}
+
+.sms-login-container,
+.sms-dashboard {
+  font-family: var(--sms-font);
+  background: var(--sms-bg);
+  color: var(--sms-text);
+}
+
+.sms-login-container {
+  max-width: 350px;
+  margin: 60px auto;
+  padding: 2rem;
+  border-radius: var(--sms-border-radius);
+  box-shadow: 0 2px 8px rgba(60,99,130,0.1);
+  background: #fff;
+}
+
+.sms-login-container input,
+.sms-login-container button {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border-radius: var(--sms-border-radius);
+  border: 1px solid var(--sms-accent);
+}
+
+.sms-login-container button {
+  background: var(--sms-primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.sms-dashboard-content {
+  display: flex;
+}
+
+.sms-sidebar {
+  width: 200px;
+  background: var(--sms-accent);
+  color: #fff;
+  min-height: 100vh;
+  padding: 1rem 0;
+}
+
+.sms-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sms-sidebar li {
+  margin: 1rem 0;
+}
+
+.sms-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.sms-topbar {
+  background: var(--sms-primary);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0 0 var(--sms-border-radius) var(--sms-border-radius);
+}

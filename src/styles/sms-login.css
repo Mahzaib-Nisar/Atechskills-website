@@ -1,0 +1,108 @@
+:root {
+  --sms-dark-bg: #0F172A;
+  --sms-card-bg: #1E1B2E;
+  --sms-primary: #6B21A8;
+  --sms-primary-hover: #7C3AED;
+  --sms-green: #10B981;
+  --sms-gradient: linear-gradient(90deg, #6B21A8 0%, #7C3AED 100%);
+}
+
+.sms-login-bg {
+  min-height: 100vh;
+  background: var(--sms-dark-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sms-login-card {
+  margin-top: 10%;
+  background: var(--sms-card-bg);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 100%;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sms-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.sms-portal-label {
+  color: var(--sms-green);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.sms-login-card form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sms-login-input {
+  background: transparent;
+  border: 2px solid #2d2e3e;
+  border-radius: 0.7rem;
+  color: #fff;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.sms-login-input:focus {
+  border: 2px solid;
+  border-image: var(--sms-gradient) 1;
+}
+
+.sms-login-btn {
+  background: var(--sms-primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+
+.sms-login-btn:hover {
+  background: var(--sms-primary-hover);
+}
+
+.sms-login-error {
+  color: #f87171;
+  background: #2d2e3e;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.98rem;
+}
+
+.sms-eye-toggle {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a3a3a3;
+  cursor: pointer;
+}
+
+.sms-login-input-wrapper {
+  position: relative;
+  width: 100%;
+}

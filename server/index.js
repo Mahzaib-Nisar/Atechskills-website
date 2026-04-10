@@ -3,6 +3,9 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import submissionsRouter from './routes/submissions.js';
+import smsAuthRouter from './routes/sms/auth.js';
+import smsAdminRouter from './routes/sms/admin.js';
+import smsEnrollmentRouter from './routes/sms/enrollment.js';
 import process from 'node:process';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 
@@ -16,6 +19,9 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 
 app.use('/api/submissions', submissionsRouter);
+app.use('/api/sms/auth', smsAuthRouter);
+app.use('/api/sms/admin', smsAdminRouter);
+app.use('/api/sms/enrollment', smsEnrollmentRouter);
 
 app.get('/api/health', (req, res) => {
   res.json({ ok: true });

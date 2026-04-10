@@ -109,7 +109,10 @@ const Navbar = () => {
           <li><Link to="/Contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
         </ul>
 
-        <button className="enroll-btn" onClick={() => window.location.href = 'https://atechskills.com/lms/login.php'}>Apply Now</button>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          <button className="enroll-btn" onClick={() => window.location.href = 'https://atechskills.com/lms/login.php'}>Apply Now</button>
+          <button className="login-btn" onClick={() => window.location.href = '/sms/login'}>Signup / Login</button>
+        </div>
       </div>
     </div>
   );

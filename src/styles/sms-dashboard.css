@@ -1,0 +1,273 @@
+:root {
+  --sms-bg: #0F172A;
+  --sms-sidebar: #1E1B2E;
+  --sms-card: #1E1B2E;
+  --sms-card-border: #2D2A40;
+  --sms-primary: #6B21A8;
+  --sms-primary-accent: #7C3AED;
+  --sms-green: #10B981;
+  --sms-text: #F8FAFC;
+  --sms-muted: #94A3B8;
+}
+
+.sms-dashboard-bg {
+  background: var(--sms-bg);
+  min-height: 100vh;
+  color: var(--sms-text);
+}
+
+.sms-sidebar {
+  width: 240px;
+  background: var(--sms-sidebar);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0 1rem 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.sms-sidebar-logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+}
+
+.sms-sidebar-portal {
+  color: var(--sms-green);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.sms-sidebar-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sms-primary-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.sms-sidebar-student {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.sms-sidebar-student-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sms-sidebar-student-course {
+  font-size: 0.98rem;
+  color: var(--sms-muted);
+  margin-bottom: 0.5rem;
+}
+
+.sms-sidebar-nav {
+  width: 100%;
+  flex: 1;
+}
+
+.sms-sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 2rem;
+  color: var(--sms-muted);
+  text-decoration: none;
+  font-size: 1.05rem;
+  border-left: 4px solid transparent;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  margin-bottom: 0.2rem;
+}
+
+.sms-sidebar-link.active {
+  background: var(--sms-primary);
+  color: #fff;
+  border-left: 4px solid var(--sms-primary-accent);
+}
+
+.sms-sidebar-link-icon {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.sms-sidebar-logout {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.85rem 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.05rem;
+  cursor: pointer;
+  border-left: 4px solid transparent;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+}
+
+.sms-sidebar-logout:hover {
+  background: var(--sms-primary-accent);
+  color: #fff;
+  border-left: 4px solid var(--sms-primary);
+}
+
+.sms-dashboard-main {
+  margin-left: 240px;
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+
+.sms-dashboard-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.sms-dashboard-breadcrumb {
+  color: var(--sms-muted);
+  font-size: 1.05rem;
+}
+
+.sms-dashboard-batch-badge {
+  background: var(--sms-primary-accent);
+  color: #fff;
+  border-radius: 0.7rem;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-left: 1.2rem;
+}
+
+.sms-dashboard-notify {
+  color: var(--sms-muted);
+  font-size: 1.5rem;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+
+.sms-dashboard-notify:hover {
+  color: var(--sms-primary-accent);
+}
+
+.sms-dashboard-cards {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.2rem;
+}
+
+.sms-dashboard-stat-card {
+  background: var(--sms-card);
+  border-radius: 1.1rem;
+  border-top: 5px solid var(--sms-primary);
+  border: 1.5px solid var(--sms-card-border);
+  flex: 1;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  color: var(--sms-text);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 180px;
+}
+
+.sms-dashboard-stat-title {
+  font-size: 1.05rem;
+  color: var(--sms-muted);
+  margin-bottom: 0.5rem;
+}
+
+.sms-dashboard-stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.sms-dashboard-stat-badge {
+  font-size: 0.98rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  padding: 0.2rem 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.sms-dashboard-badge-green {
+  background: var(--sms-green);
+  color: #fff;
+}
+
+.sms-dashboard-badge-amber {
+  background: #fbbf24;
+  color: #222;
+}
+
+.sms-dashboard-badge-muted {
+  background: var(--sms-muted);
+  color: #fff;
+}
+
+.sms-dashboard-info-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.2rem;
+}
+
+.sms-dashboard-info-label {
+  color: var(--sms-muted);
+  font-size: 1.01rem;
+  margin-bottom: 0.2rem;
+}
+
+.sms-dashboard-info-value {
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.sms-dashboard-activity-feed {
+  background: var(--sms-card);
+  border-radius: 1.1rem;
+  border: 1.5px solid var(--sms-card-border);
+  padding: 1.3rem 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.sms-dashboard-activity-title {
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.sms-dashboard-activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sms-dashboard-activity-item {
+  color: var(--sms-muted);
+  font-size: 1.01rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+}
+
+.sms-dashboard-activity-icon {
+  color: var(--sms-primary-accent);
+  margin-right: 0.7rem;
+  font-size: 1.1rem;
+}
