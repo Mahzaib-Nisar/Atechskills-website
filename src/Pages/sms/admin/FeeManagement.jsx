@@ -34,27 +34,27 @@ const FeeManagement = () => {
       <AdminSidebar />
       <main className="sms-dashboard-main">
         <Topbar breadcrumb="Fee Management" />
-        <div className="sms-purple-card" style={{ marginBottom: '2rem', padding: '2rem', maxWidth: 600 }}>
-          <h3 style={{ color: '#FFFFFF', marginBottom: '1rem' }}>Create Fee Challan</h3>
+        <div style={{ marginBottom: '2rem', background: '#1E1B2E', borderRadius: '1.1rem', border: '1.5px solid #2D2A40', padding: '2rem', maxWidth: 600 }}>
+          <h3 style={{ color: '#6B21A8', marginBottom: '1rem' }}>Create Fee Challan</h3>
           <form style={{ display: 'flex', flexWrap: 'wrap', gap: '1.2rem' }}>
-            <select name="studentId" value={form.studentId} onChange={handleChange} className="sms-input-purple">
+            <select name="studentId" value={form.studentId} onChange={handleChange} style={inputStyle}>
               <option value="">Select Student</option>
               {students.map(s => <option key={s._id} value={s._id}>{s.name} ({s.studentId})</option>)}
             </select>
-            <select name="courseId" value={form.courseId} onChange={handleCourseChange} className="sms-input-purple">
+            <select name="courseId" value={form.courseId} onChange={handleCourseChange} style={inputStyle}>
               <option value="">Select Course</option>
               {courses.map(c => <option key={c._id} value={c._id}>{c.name}</option>)}
             </select>
-            <input name="amount" value={form.amount} onChange={handleChange} placeholder="Amount" className="sms-input-purple" />
-            <input name="dueDate" type="date" value={form.dueDate} onChange={handleChange} className="sms-input-purple" />
-            <input name="label" value={form.label} onChange={handleChange} placeholder="Semester/Month" className="sms-input-purple" />
-            <button type="button" style={{ background: '#FFFFFF', color: '#6B21A8', border: 'none', borderRadius: '0.7rem', padding: '0.7rem 1.5rem', fontWeight: 600, cursor: 'pointer', marginTop: 8 }}>Generate Challan</button>
+            <input name="amount" value={form.amount} onChange={handleChange} placeholder="Amount" style={inputStyle} />
+            <input name="dueDate" type="date" value={form.dueDate} onChange={handleChange} style={inputStyle} />
+            <input name="label" value={form.label} onChange={handleChange} placeholder="Semester/Month" style={inputStyle} />
+            <button type="button" style={{ background: 'linear-gradient(90deg,#6B21A8,#7C3AED)', color: '#fff', border: 'none', borderRadius: '0.7rem', padding: '0.7rem 1.5rem', fontWeight: 600, cursor: 'pointer', marginTop: 8 }}>Generate Challan</button>
           </form>
         </div>
         <h3 style={{ color: '#6B21A8', marginBottom: '1rem' }}>All Fee Records</h3>
-        <table className="sms-table-purple">
+        <table style={{ width: '100%', background: '#1E1B2E', borderRadius: '0.8rem', color: '#F8FAFC', borderCollapse: 'collapse' }}>
           <thead>
-            <tr>
+            <tr style={{ color: '#7C3AED' }}>
               <th style={{ padding: '0.7rem' }}>Challan No</th>
               <th>Student</th>
               <th>Course</th>
@@ -74,13 +74,13 @@ const FeeManagement = () => {
                 <td>{f.dueDate ? new Date(f.dueDate).toLocaleDateString() : '-'}</td>
                 <td>{renderStatus(f.status)}</td>
                 <td>
-                  <button style={{ background: '#FFFFFF', color: '#6B21A8', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer', marginRight: 8 }}>Download PDF</button>
+                  <button style={{ background: '#7C3AED', color: '#fff', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer', marginRight: 8 }}>Download PDF</button>
                   <button style={{ background: '#10B981', color: '#fff', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer', marginRight: 8 }}>Mark as Paid</button>
                   <button style={{ background: '#ef4444', color: '#fff', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer' }}>Delete</button>
                 </td>
               </tr>
             ))}
-            {feeRecords.length === 0 && <tr><td colSpan={7} style={{ color: 'rgba(255,255,255,0.7)', textAlign: 'center' }}>No records found.</td></tr>}
+            {feeRecords.length === 0 && <tr><td colSpan={7} style={{ color: '#94A3B8', textAlign: 'center' }}>No records found.</td></tr>}
           </tbody>
         </table>
       </main>

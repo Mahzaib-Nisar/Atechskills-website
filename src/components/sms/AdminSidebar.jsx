@@ -18,7 +18,7 @@ const AdminSidebar = () => {
         <div className="sms-sidebar-student-course" style={{ color: '#F43F5E' }}>Administrator</div>
       </div>
       <nav className="sms-sidebar-nav">
-        <NavLink to="/sms/admin-dashboard" className={({ isActive }) => isActive ? "sms-sidebar-link active" : "sms-sidebar-link"} end>
+        <NavLink to="/sms/admin" className={({ isActive }) => isActive ? "sms-sidebar-link active" : "sms-sidebar-link"} end>
           <FaTachometerAlt className="sms-sidebar-link-icon" /> Overview
         </NavLink>
         <NavLink to="/sms/admin/approvals" className={({ isActive }) => isActive ? "sms-sidebar-link active" : "sms-sidebar-link"}>
@@ -33,12 +33,19 @@ const AdminSidebar = () => {
         <NavLink to="/sms/admin/courses" className={({ isActive }) => isActive ? "sms-sidebar-link active" : "sms-sidebar-link"}>
           <FaBook className="sms-sidebar-link-icon" /> Courses & Batches
         </NavLink>
-        <div style={{ marginTop: 'auto', paddingBottom: '2rem' }}>
-          <button className="sms-sidebar-logout-btn" onClick={logout}>
-            <FaSignOutAlt className="sms-sidebar-link-icon" /> Logout
-          </button>
-        </div>
+        <NavLink to="/sms/admin/assignments" className={({ isActive }) => isActive ? "sms-sidebar-link active" : "sms-sidebar-link"}>
+          <FaTasks className="sms-sidebar-link-icon" /> Assignments
+        </NavLink>
+        <NavLink to="/sms/admin/results" className={({ isActive }) => isActive ? "sms-sidebar-link active" : "sms-sidebar-link"}>
+          <FaChartBar className="sms-sidebar-link-icon" /> Results
+        </NavLink>
+        <NavLink to="/sms/admin/settings" className={({ isActive }) => isActive ? "sms-sidebar-link active" : "sms-sidebar-link"}>
+          <FaCog className="sms-sidebar-link-icon" /> Settings
+        </NavLink>
       </nav>
+      <button className="sms-sidebar-logout" onClick={logout}>
+        <FaSignOutAlt className="sms-sidebar-link-icon" /> Logout
+      </button>
     </aside>
   );
 };

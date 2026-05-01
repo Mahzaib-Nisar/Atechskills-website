@@ -11,12 +11,11 @@ const AdminOverview = () => {
   const [recent, setRecent] = useState([]);
 
   useEffect(() => {
-    const apiUrl = import.meta.env.VITE_API_URL || "";
-    fetch(`${apiUrl}/api/sms/admin/stats`, { headers: { Authorization: `Bearer ${token}` } })
+    fetch("/api/sms/admin/stats", { headers: { Authorization: `Bearer ${token}` } })
       .then(res => res.json()).then(setStats);
-    fetch(`${apiUrl}/api/sms/admin/pending-approvals`, { headers: { Authorization: `Bearer ${token}` } })
+    fetch("/api/sms/admin/pending-approvals", { headers: { Authorization: `Bearer ${token}` } })
       .then(res => res.json()).then(setPending);
-    fetch(`${apiUrl}/api/sms/admin/enrolled-students?limit=5`, { headers: { Authorization: `Bearer ${token}` } })
+    fetch("/api/sms/admin/enrolled-students?limit=5", { headers: { Authorization: `Bearer ${token}` } })
       .then(res => res.json()).then(setRecent);
   }, [token]);
 
@@ -36,25 +35,25 @@ const AdminOverview = () => {
             <h3 style={{ color: '#6B21A8', marginBottom: '1rem' }}>Pending Approvals</h3>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {pending.map((item, i) => (
-                <li key={i} className="sms-purple-card" style={{ marginBottom: '1rem', padding: '1rem 1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <li key={i} style={{ background: '#1E1B2E', border: '1.5px solid #2D2A40', borderRadius: '0.8rem', marginBottom: '1rem', padding: '1rem 1.2rem', color: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <span>{item.studentId?.name} ({item.courseId?.name})</span>
-                  <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.98rem' }}>{new Date(item.submissionDate).toLocaleDateString()}</span>
-                  <button style={{ background: '#FFFFFF', color: '#6B21A8', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer' }}>Review</button>
+                  <span style={{ color: '#94A3B8', fontSize: '0.98rem' }}>{new Date(item.submissionDate).toLocaleDateString()}</span>
+                  <button style={{ background: '#6B21A8', color: '#fff', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer' }}>Review</button>
                 </li>
               ))}
-              {pending.length === 0 && <li style={{ color: '#64748B' }}>No pending approvals.</li>}
+              {pending.length === 0 && <li style={{ color: '#94A3B8' }}>No pending approvals.</li>}
             </ul>
           </div>
           <div style={{ flex: 1 }}>
             <h3 style={{ color: '#6B21A8', marginBottom: '1rem' }}>Recent Enrollments</h3>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {recent.map((item, i) => (
-                <li key={i} className="sms-purple-card" style={{ marginBottom: '1rem', padding: '1rem 1.2rem' }}>
+                <li key={i} style={{ background: '#1E1B2E', border: '1.5px solid #2D2A40', borderRadius: '0.8rem', marginBottom: '1rem', padding: '1rem 1.2rem', color: '#F8FAFC' }}>
                   <span>{item.name} ({item.selectedCourse?.name})</span>
-                  <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.98rem', marginLeft: 12 }}>{new Date(item.enrollmentDate).toLocaleDateString()}</span>
+                  <span style={{ color: '#94A3B8', fontSize: '0.98rem', marginLeft: 12 }}>{new Date(item.enrollmentDate).toLocaleDateString()}</span>
                 </li>
               ))}
-              {recent.length === 0 && <li style={{ color: '#64748B' }}>No recent enrollments.</li>}
+              {recent.length === 0 && <li style={{ color: '#94A3B8' }}>No recent enrollments.</li>}
             </ul>
           </div>
         </div>

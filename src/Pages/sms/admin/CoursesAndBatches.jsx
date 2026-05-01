@@ -19,19 +19,17 @@ const CoursesAndBatches = () => {
         <Topbar breadcrumb="Courses & Batches" />
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem' }}>
           {courses.map((c, i) => (
-            <div key={i} className="sms-purple-card" style={{ padding: '1.5rem', minWidth: 320, position: 'relative' }}>
-              <div style={{ fontWeight: 600, color: '#FFFFFF', fontSize: '1.2rem', marginBottom: '0.5rem' }}>{c.name}</div>
-              <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.98rem', marginBottom: '1rem' }}>{c.bootcampType === 'short' ? 'Short Bootcamp' : 'Complete Bootcamp'} {c.track && `- ${c.track}`}</div>
-              <div style={{ marginBottom: '0.3rem' }}>Fee: <span style={{ color: '#FFFFFF', fontWeight: 700 }}>PKR {c.fee}</span></div>
-              <div style={{ marginBottom: '0.3rem' }}>Batch: <span style={{ fontWeight: 600 }}>{c.batchNo}</span></div>
-              <div style={{ marginBottom: '0.8rem' }}>Enrolled: <span style={{ color: '#10B981', fontWeight: 700 }}>{c.enrolledCount}</span> / {c.maxSeats}</div>
-              <div style={{ background: 'rgba(255,255,255,0.2)', borderRadius: '0.5rem', height: 10, margin: '1rem 0', width: '100%' }}>
-                <div style={{ background: '#FFFFFF', height: 10, borderRadius: '0.5rem', width: `${(c.enrolledCount / (c.maxSeats || 1)) * 100}%` }}></div>
+            <div key={i} style={{ background: '#1E1B2E', border: '1.5px solid #2D2A40', borderRadius: '1.1rem', padding: '1.5rem', minWidth: 320, position: 'relative' }}>
+              <div style={{ fontWeight: 600, color: '#F8FAFC', fontSize: '1.1rem' }}>{c.name}</div>
+              <div style={{ color: '#94A3B8', fontSize: '0.98rem' }}>{c.bootcampType === 'short' ? 'Short Bootcamp' : 'Complete Bootcamp'} {c.track && `- ${c.track}`}</div>
+              <div>Fee: <span style={{ color: '#6B21A8', fontWeight: 600 }}>PKR {c.fee}</span></div>
+              <div>Batch: {c.batchNo}</div>
+              <div>Enrolled: <span style={{ color: '#10B981', fontWeight: 600 }}>{c.enrolledCount}</span> / {c.maxSeats}</div>
+              <div style={{ background: '#2D2A40', borderRadius: '0.5rem', height: 8, margin: '0.7rem 0', width: '100%' }}>
+                <div style={{ background: 'linear-gradient(90deg,#6B21A8,#7C3AED)', height: 8, borderRadius: '0.5rem', width: `${(c.enrolledCount / (c.maxSeats || 1)) * 100}%` }}></div>
               </div>
-              <div style={{ display: 'flex', gap: '0.8rem', marginTop: '1.2rem' }}>
-                <button style={{ background: '#FFFFFF', color: '#6B21A8', border: 'none', borderRadius: '0.7rem', padding: '0.6rem 1.2rem', fontWeight: 700, cursor: 'pointer', flex: 1 }}>Edit</button>
-                <button style={{ background: '#10B981', color: '#fff', border: 'none', borderRadius: '0.7rem', padding: '0.6rem 1.2rem', fontWeight: 700, cursor: 'pointer', flex: 1 }}>Add Batch</button>
-              </div>
+              <button style={{ background: '#6B21A8', color: '#fff', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer', marginRight: 8 }}>Edit</button>
+              <button style={{ background: '#10B981', color: '#fff', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer' }}>Add Batch</button>
             </div>
           ))}
         </div>

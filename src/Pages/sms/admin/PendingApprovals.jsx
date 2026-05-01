@@ -28,13 +28,13 @@ const PendingApprovals = () => {
         <Topbar breadcrumb="Pending Approvals" />
         <div style={{ marginBottom: '1.5rem', display: 'flex', gap: '1rem' }}>
           {["All Pending", "Approved Today", "Rejected"].map(f => (
-            <button key={f} onClick={() => setFilter(f)} style={{ background: filter === f ? 'linear-gradient(90deg,#6B21A8,#7C3AED)' : '#6B21A8', color: '#FFFFFF', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer' }}>{f}</button>
+            <button key={f} onClick={() => setFilter(f)} style={{ background: filter === f ? 'linear-gradient(90deg,#6B21A8,#7C3AED)' : '#1E1B2E', color: '#F8FAFC', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer' }}>{f}</button>
           ))}
-          <input placeholder="Search by name or ID" value={search} onChange={e => setSearch(e.target.value)} className="sms-input-purple" style={{ marginLeft: 'auto' }} />
+          <input placeholder="Search by name or ID" value={search} onChange={e => setSearch(e.target.value)} style={{ marginLeft: 'auto', background: '#0F172A', color: '#F8FAFC', border: '1.5px solid #2D2A40', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontSize: '1rem' }} />
         </div>
-        <table className="sms-table-purple">
+        <table style={{ width: '100%', background: '#1E1B2E', borderRadius: '0.8rem', color: '#F8FAFC', borderCollapse: 'collapse' }}>
           <thead>
-            <tr>
+            <tr style={{ color: '#7C3AED' }}>
               <th style={{ padding: '0.7rem' }}>Student Name</th>
               <th>Student ID</th>
               <th>Course</th>
@@ -53,7 +53,7 @@ const PendingApprovals = () => {
                 <td>PKR {item.amount}</td>
                 <td>{new Date(item.submissionDate).toLocaleDateString()}</td>
                 <td>
-                  {item.paymentProofUrl ? <a href={item.paymentProofUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>View Proof</a> : 'N/A'}
+                  {item.paymentProofUrl ? <a href={item.paymentProofUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#7C3AED', textDecoration: 'underline' }}>View Proof</a> : 'N/A'}
                 </td>
                 <td>
                   <button style={{ background: '#10B981', color: '#fff', border: 'none', borderRadius: '0.7rem', padding: '0.5rem 1.2rem', fontWeight: 600, cursor: 'pointer', marginRight: 8 }}>Approve</button>
@@ -61,7 +61,7 @@ const PendingApprovals = () => {
                 </td>
               </tr>
             ))}
-            {filtered.length === 0 && <tr><td colSpan={7} style={{ color: 'rgba(255,255,255,0.7)', textAlign: 'center' }}>No records found.</td></tr>}
+            {filtered.length === 0 && <tr><td colSpan={7} style={{ color: '#94A3B8', textAlign: 'center' }}>No records found.</td></tr>}
           </tbody>
         </table>
       </main>
